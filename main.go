@@ -17,15 +17,25 @@ import "fmt"
  
 func main() {
     for i := 1; i <= 100; i++ {
-        switch {
-        case (i%5==0) && (i%3 == 0) :
+    	var fizz, buzz bool = false, false;
+    	
+		if (i%3 == 0) {
+			fizz = true;
+		}
+		
+		if (i%5 == 0) {
+			buzz = true;
+		}
+
+
+		if (fizz && buzz) {
             fmt.Println("FizzBuzz")
-        case i%3==0:
+		} else if fizz {
             fmt.Println("Fizz")
-        case i%5==0:
+		} else if (buzz) {
             fmt.Println("Buzz")
-        default: 
+		} else {
             fmt.Println(i)
-        }
+		}
     }
 }
